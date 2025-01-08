@@ -708,7 +708,7 @@ export class AggregationService {
     );
 
     queryBuilder.limit(take);
-    skip && queryBuilder.offset(skip);
+    // skip && queryBuilder.offset(skip);
 
     const sql = queryBuilder.toQuery();
 
@@ -735,7 +735,6 @@ export class AggregationService {
         '__id',
         recordIds.map((record) => record.__id)
       );
-
     // eslint-disable-next-line
     const indexResult = await this.prisma.$queryRawUnsafe<{ row_num: number; __id: string }[]>(
       indexQueryBuilder.toQuery()

@@ -348,6 +348,9 @@ export class SearchQueryBuilder {
       }
 
       baseSortIndex && qb.orderBy(baseSortIndex, 'asc');
+
+      // for test
+      qb.limit(300);
     });
 
     queryBuilder
